@@ -1,17 +1,9 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class UsersController {
-  public async index({}: HttpContextContract) {}
+  public async me({ auth }: HttpContextContract) {
+    const user = auth.user
 
-  public async create({}: HttpContextContract) {}
-
-  public async store({}: HttpContextContract) {}
-
-  public async show({}: HttpContextContract) {}
-
-  public async edit({}: HttpContextContract) {}
-
-  public async update({}: HttpContextContract) {}
-
-  public async destroy({}: HttpContextContract) {}
+    return user.serialize()
+  }
 }
