@@ -52,6 +52,15 @@
     picomatch "^2.3.0"
     slash "^3.0.0"
 
+"@adonisjs/auth@^8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-8.0.10.tgz#7d89aac9a57a6ce79cfff58e1a45af5cda65cfef"
+  integrity sha512-jE2C0btUresr1pRV1P8NAehSJlebJ+TlrQp1p1ws52AQ5h4ayjzTniZBtq6pSgm5uv6TAEQ7Mw7ZfTOwaA8MBQ==
+  dependencies:
+    "@poppinss/hooks" "^3.0.5"
+    "@poppinss/utils" "^3.2.0"
+    luxon "^2.0.2"
+
 "@adonisjs/bodyparser@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/bodyparser/-/bodyparser-8.0.1.tgz#2ef7a60ddb7f68eee92269be8fc0fd1827bbfd9a"
@@ -65,6 +74,13 @@
     file-type "^16.5.3"
     fs-extra "^10.0.0"
     media-typer "^1.1.0"
+
+"@adonisjs/bouncer@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@adonisjs/bouncer/-/bouncer-2.2.5.tgz#4b166ad769f5c3868e6aaa284dd623daffc6b8f2"
+  integrity sha512-f060bMQwjJBAQ2pTtUrCbJ3n3/J3nQvzdrpWpWSEzdn8bdZALGh2R1nIhH0cVh8lMQuXzowo9ojxjWGFI0LfmQ==
+  dependencies:
+    "@poppinss/utils" "^3.2.0"
 
 "@adonisjs/config@^3.0.5":
   version "3.0.5"
@@ -391,6 +407,11 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@poppinss/hooks/-/hooks-2.0.0.tgz#d5346ad1eb53c7a0861f77ad6a069acb76765a51"
   integrity sha512-Hn8MUlS2gRJ7JvfZsO/lfMlYZhIiJOQdNft6ITMUrbYAJuEfXiThP/S6W47EWpc3ZaS2/3Ic9/Qn9Gb0FRL3Uw==
+
+"@poppinss/hooks@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@poppinss/hooks/-/hooks-3.0.5.tgz#ae491fc11500bc9cb7e24f6b637704e7d9868505"
+  integrity sha512-kazQstmIPq4n7/qjk5ms9SEiXtLEJ+EMZXxyXTupTVq7URFIUeULgXFv/F3vheLPCSzfByu/L2iO7M457RjszQ==
 
 "@poppinss/manager@^4.0.4":
   version "4.0.4"
@@ -2719,7 +2740,7 @@ luxon@^1.25.0:
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.28.0.tgz#e7f96daad3938c06a62de0fb027115d251251fbf"
   integrity sha512-TfTiyvZhwBYM/7QdAVDh+7dBTBA29v4ik0Ce9zda3Mnf8on1S5KJI8P2jKFZ8+5C0jhmr0KwJEO/Wdpm0VeWJQ==
 
-luxon@^2.1.1, luxon@^2.2.0:
+luxon@^2.0.2, luxon@^2.1.1, luxon@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-2.2.0.tgz#f5c4a234ba4016f792488b11aaed2d5bc14c888e"
   integrity sha512-LwmknessH4jVIseCsizUgveIHwlLv/RQZWC2uDSMfGJs7w8faPUi2JFxfyfMcTPrpNbChTem3Uz6IKRtn+LcIA==
