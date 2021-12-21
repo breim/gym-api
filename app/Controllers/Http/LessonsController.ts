@@ -10,12 +10,13 @@ export default class LessonsController {
     return lessons
   }
 
-  public async store({ request, auth }) {
+  public async store({ request, auth, bouncer }) {
     const data = request.only(['name'])
 
     request.requestData = { ...data, user_id: auth.user.id }
 
     await request.validate({ schema: LessonValidator.store })
+    await bouncer.with('LessonPolicy').authorize('canHandle', auth.user)
 
     const lesson = await Lesson.create({
       ...data,
@@ -25,11 +26,12 @@ export default class LessonsController {
     return lesson
   }
 
-  public async update({ params, request }) {
+  public async update({ params, auth, request, bouncer }) {
     const data = request.only(['amount', 'frequency'])
     const lesson = await Lesson.findOrFail(params.id)
 
     await request.validate({ schema: LessonValidator.store })
+    await bouncer.with('LessonPolicy').authorize('canHandle', auth.user)
 
     lesson.merge(data)
 
