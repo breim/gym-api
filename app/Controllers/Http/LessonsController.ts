@@ -3,6 +3,8 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Lesson from '../../Models/Lesson'
 import LessonValidator from 'App/Validators/LessonValidator'
 
+import DailyAPI from '../../Services/DailyAPI'
+
 export default class LessonsController {
   public async index({ auth }: HttpContextContract) {
     const lessons = await Lesson.query().preload('user').where('user_id', auth.user.id)
@@ -18,8 +20,11 @@ export default class LessonsController {
     await request.validate({ schema: LessonValidator.store })
     await bouncer.with('LessonPolicy').authorize('canHandle', auth.user)
 
+    const createRoom = await new DailyAPI().room()
+
     const lesson = await Lesson.create({
       ...data,
+      room_url: createRoom.url,
       user_id: auth.user.id,
     })
 

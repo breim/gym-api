@@ -10,6 +10,9 @@ export default class Lesson extends BaseModel {
   public name: string
 
   @column()
+  public roomUrl: string
+
+  @column()
   public userId: string
 
   @belongsTo(() => User)
