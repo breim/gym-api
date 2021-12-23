@@ -5,7 +5,7 @@ import DailyAPI from '../../Services/DailyAPI'
 
 export default class LessonsController {
   public async index() {
-    const lessons = await Lesson.query()
+    const lessons = await Lesson.query().orderBy('created_at', 'desc')
 
     return lessons
   }
