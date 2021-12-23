@@ -1,13 +1,11 @@
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
 import Lesson from '../../Models/Lesson'
 import LessonValidator from 'App/Validators/LessonValidator'
 
 import DailyAPI from '../../Services/DailyAPI'
 
 export default class LessonsController {
-  public async index({ auth }: HttpContextContract) {
-    const lessons = await Lesson.query().preload('user').where('user_id', auth.user.id)
+  public async index() {
+    const lessons = await Lesson.query()
 
     return lessons
   }
