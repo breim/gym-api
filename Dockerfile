@@ -13,4 +13,5 @@ RUN cd build
 RUN yarn install --production
 
 EXPOSE 80
+WORKDIR $HOME/build
 CMD ["node", "server.js"]
