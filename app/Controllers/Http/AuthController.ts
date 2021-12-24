@@ -10,7 +10,7 @@ export default class AuthController {
       expiresIn: '90 days',
     })
 
-    return token.toJSON()
+    return { user: auth.user, jwt: token.toJSON() }
   }
 
   public async sign_up({ request, auth }: HttpContextContract) {
