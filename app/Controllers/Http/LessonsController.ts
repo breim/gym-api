@@ -19,10 +19,12 @@ export default class LessonsController {
     await bouncer.with('LessonPolicy').authorize('canHandle', auth.user)
 
     const createRoom = await new DailyAPI().room()
+    const createMeetingToken = await new DailyAPI().createMeetingToken(createRoom.name)
 
     const lesson = await Lesson.create({
       ...data,
       room_url: createRoom.url,
+      meeting_token: createMeetingToken.token,
       user_id: auth.user.id,
     })
 

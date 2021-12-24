@@ -1,15 +1,15 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class AddUrlToLessons extends BaseSchema {
+export default class AddMeetingTokenToLessons extends BaseSchema {
   public up() {
     this.schema.alterTable('lessons', (table) => {
-      table.string('room_url', 255)
+      table.string('meeting_token', 600)
     })
   }
 
   public down() {
     this.schema.alterTable('lessons', (table) => {
-      table.dropColumn('room_url')
+      table.dropColumn('meeting_token')
     })
   }
 }

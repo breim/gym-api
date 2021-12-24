@@ -15,6 +15,9 @@ export default class Lesson extends BaseModel {
   @column()
   public userId: string
 
+  @column()
+  public meetingToken: string
+
   @belongsTo(() => User)
   public user: BelongsTo<typeof User>
 

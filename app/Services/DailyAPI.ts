@@ -35,6 +35,20 @@ class DailyAPI extends HttpClient {
 
     return response
   }
+
+  public createMeetingToken = (room_name) => {
+    const payload = {
+      properties: {
+        room_name: room_name,
+        is_owner: true,
+        user_name: 'Prof Henrique',
+      },
+    }
+
+    const response = this.instance.post('/meeting-tokens', payload)
+
+    return response
+  }
 }
 
 export default DailyAPI
