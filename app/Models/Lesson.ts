@@ -10,7 +10,13 @@ export default class Lesson extends BaseModel {
   public name: string
 
   @column()
+  public roomName: string
+
+  @column()
   public roomUrl: string
+
+  @column()
+  public breakRoom: boolean
 
   @column()
   public userId: string

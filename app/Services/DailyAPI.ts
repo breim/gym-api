@@ -15,7 +15,7 @@ class DailyAPI extends HttpClient {
   }
 
   private _handleRequest = (config: AxiosRequestConfig) => {
-    config.headers['Authorization'] = `Bearer ${Env.get('DAILY_API_TOKEN')}`
+    config.headers!['Authorization'] = `Bearer ${Env.get('DAILY_API_TOKEN')}`
 
     return config
   }
