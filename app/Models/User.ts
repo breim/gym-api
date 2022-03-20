@@ -12,6 +12,9 @@ export default class User extends BaseModel {
   public email: string
 
   @column()
+  public meeting_token: string
+
+  @column()
   public employee: boolean
 
   @column({ serializeAs: null })
